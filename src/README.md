@@ -6,14 +6,14 @@ This repository contains a series of scripts for reproducing our C-RAG experimen
 Below are the steps on how to run each script, with detailed explanations of their functionality.
 
 
-## `query_gpt.py`
+## CRAG
 
 This script reads a CSV file with documents and questions and uses a selected mode to perform specific tasks. 
 
 ### Usage:
 
 ```bash
-python query_gpt.py your_file.csv --mode retrieval
+python crag.py your_file.csv --mode retrieval
 ```
 
 ### Arguments:
@@ -26,7 +26,7 @@ python query_gpt.py your_file.csv --mode retrieval
 ### Example:
 
 ```bash
-python query_gpt.py your_file.csv --mode retrieval
+python crag.py your_file.csv --mode retrieval
 ```
 
 ### Functionality:
@@ -43,7 +43,7 @@ This script fine-tunes a Llama-2-7b/13b using the data provided in a CSV file.
 ### Usage:
 
 ```bash
-python fine_tune_script.py --data_path path/annotated_file.csv --target_column output_crag --output_dir ./fine_tuned_model
+python tuning.py --data_path path/annotated_file.csv --target_column output_crag --output_dir ./fine_tuned_model
 ```
 
 ### Arguments:
@@ -54,7 +54,7 @@ python fine_tune_script.py --data_path path/annotated_file.csv --target_column o
 ### Example:
 
 ```bash
-python fine_tune_script.py --data_path ./task_file.csv --target_column output_crag --output_dir ./fine_tuned_model
+python tuning.py --data_path ./task_file.csv --target_column output_crag --output_dir ./fine_tuned_model
 ```
 
 ### Functionality:
@@ -71,7 +71,7 @@ This script runs inference on a fine-tuned model using a test CSV file. It gener
 ### Usage:
 
 ```bash
-python inference.py --test_file ./test_csv.csv
+python test.py --test_file ./test_csv.csv
 ```
 
 ### Arguments:
@@ -80,7 +80,7 @@ python inference.py --test_file ./test_csv.csv
 ### Example:
 
 ```bash
-python inference.py --test_file ./test_csv.csv
+python test.py --test_file ./test_csv.csv
 ```
 
 ### Functionality:
@@ -96,7 +96,7 @@ This script performs document retrieval using either the DPR (Dense Passage Retr
 ### Usage:
 
 ```bash
-python script.py --model_type DPR --input_csv questions.csv --output_csv results.csv
+python retriever.py --model_type DPR --input_csv questions.csv --output_csv results.csv
 ```
 
 ### Arguments:
@@ -107,7 +107,7 @@ python script.py --model_type DPR --input_csv questions.csv --output_csv results
 ### Example:
 
 ```bash
-python script.py --model_type DPR --input_csv questions.csv --output_csv results.csv
+python retriever.py --model_type DPR --input_csv questions.csv --output_csv results.csv
 ```
 
 ### Functionality:
