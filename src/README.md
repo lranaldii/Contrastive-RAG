@@ -36,7 +36,7 @@ python crag.py your_file.csv --mode retrieval
 
 ---
 
-## `fine_tune_script.py`
+## tuning
 
 This script fine-tunes a Llama-2-7b/13b using the data provided in a CSV file. 
 
@@ -64,7 +64,7 @@ python tuning.py --data_path ./task_file.csv --target_column output_crag --outpu
 
 ---
 
-## `inference.py`
+## `test/inference
 
 This script runs inference on a fine-tuned model using a test CSV file. It generates the model's predictions based on the questions and documents provided in the CSV file.
 
@@ -89,7 +89,7 @@ python test.py --test_file ./test_csv.csv
 
 ---
 
-## `script.py`
+## Retriever (construction dataframes)
 
 This script performs document retrieval using either the DPR (Dense Passage Retrieval) or MS-MARCO model. It takes an input CSV file containing questions and retrieves the top 5 documents for each question. The results are saved in a CSV file.
 
